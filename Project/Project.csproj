@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49A90B40-8E72-461C-86C0-3A2D1ABBAEFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Project</RootNamespace>
+    <AssemblyName>Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=1.0.1.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.1.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.1\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Baglanti.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAppointSee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAppointSee.Designer.cs">
+      <DependentUpon>FormAppointSee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAppointTake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAppointTake.Designer.cs">
+      <DependentUpon>FormAppointTake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDoctorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDoctorAdd.Designer.cs">
+      <DependentUpon>FormDoctorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDoctorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDoctorList.Designer.cs">
+      <DependentUpon>FormDoctorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDoctorUpDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDoctorUpDel.Designer.cs">
+      <DependentUpon>FormDoctorUpDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEmail.Designer.cs">
+      <DependentUpon>FormEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMemberAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMemberAdd.Designer.cs">
+      <DependentUpon>FormMemberAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMemberCodeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMemberCodeAdd.Designer.cs">
+      <DependentUpon>FormMemberCodeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMemberCodeEncode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMemberCodeEncode.Designer.cs">
+      <DependentUpon>FormMemberCodeEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMemberList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMemberList.Designer.cs">
+      <DependentUpon>FormMemberList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMemberUpDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMemberUpDel.Designer.cs">
+      <DependentUpon>FormMemberUpDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMoney.Designer.cs">
+      <DependentUpon>FormMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMoneyStaffPays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMoneyStaffPays.Designer.cs">
+      <DependentUpon>FormMoneyStaffPays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCount.Designer.cs">
+      <DependentUpon>FormCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStaffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStaffAdd.Designer.cs">
+      <DependentUpon>FormStaffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStaffList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStaffList.Designer.cs">
+      <DependentUpon>FormStaffList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStaffUpDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStaffUpDel.Designer.cs">
+      <DependentUpon>FormStaffUpDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimer.Designer.cs">
+      <DependentUpon>FormTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemeColors.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAppointSee.resx">
+      <DependentUpon>FormAppointSee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAppointTake.resx">
+      <DependentUpon>FormAppointTake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDoctorAdd.resx">
+      <DependentUpon>FormDoctorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDoctorList.resx">
+      <DependentUpon>FormDoctorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDoctorUpDel.resx">
+      <DependentUpon>FormDoctorUpDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEmail.resx">
+      <DependentUpon>FormEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMemberAdd.resx">
+      <DependentUpon>FormMemberAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMemberCodeAdd.resx">
+      <DependentUpon>FormMemberCodeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMemberCodeEncode.resx">
+      <DependentUpon>FormMemberCodeEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMemberList.resx">
+      <DependentUpon>FormMemberList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMemberUpDel.resx">
+      <DependentUpon>FormMemberUpDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMoney.resx">
+      <DependentUpon>FormMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMoneyStaffPays.resx">
+      <DependentUpon>FormMoneyStaffPays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCount.resx">
+      <DependentUpon>FormCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormStaffAdd.resx">
+      <DependentUpon>FormStaffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormStaffList.resx">
+      <DependentUpon>FormStaffList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormStaffUpDel.resx">
+      <DependentUpon>FormStaffUpDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimer.resx">
+      <DependentUpon>FormTimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
